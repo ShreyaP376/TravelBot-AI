@@ -7,7 +7,7 @@ import {getFirestore} from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAvsc0CRWKHgopJ3p5tzC1fiYUbzE6B55k",
+  apiKey: import.meta.env.FIREBASE_API_KEY,
   authDomain: "smart-travel-assistant-f5ab5.firebaseapp.com",
   projectId: "smart-travel-assistant-f5ab5",
   storageBucket: "smart-travel-assistant-f5ab5.firebasestorage.app",
