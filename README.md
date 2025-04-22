@@ -49,19 +49,18 @@ Deployment: (Optional – add if hosted on Firebase/Vercel/Netlify)
 📸 Screenshots
 
 Landing Page
-![Landing Page](https://github.com/user-attachments/assets/c94fe166-f9b9-4c77-86bd-560db36f01c9)
-
-Past Trips Page
-![Screenshot 2025-04-22 113436](https://github.com/user-attachments/assets/e9ce6ebc-5d40-4028-9dbb-0cebf6a515f3)
+![Screenshot 2025-04-22 114044](https://github.com/user-attachments/assets/18a599dc-f29e-4075-a34a-0ca3b5fe03a6)
 
 Create Trip Page
-![Screenshot 2025-04-22 112017](https://github.com/user-attachments/assets/492e32fd-e5db-4c02-8664-b0df4e28b18c)
-![Screenshot 2025-04-22 112051](https://github.com/user-attachments/assets/6dc62b73-7f92-41b7-90e5-9f5f8935dd81)
+![Screenshot 2025-04-22 112017](https://github.com/user-attachments/assets/37306de7-924d-4302-8ca3-ebc3bd93075f)
+![Screenshot 2025-04-22 112051](https://github.com/user-attachments/assets/d62ac902-7108-4aa4-b887-aa2ffb244ed9)
 
 View Trip Page
-![Screenshot 2025-04-22 113740](https://github.com/user-attachments/assets/9b44ddf1-39c8-4385-8181-07d2f7397bf8)
-![Screenshot 2025-04-22 113847](https://github.com/user-attachments/assets/fc41038c-d6fd-4213-aa46-e82cf442f827)
+![Screenshot 2025-04-22 113740](https://github.com/user-attachments/assets/4c8b38b9-448f-4732-9e60-44e8f5fa9ff9)
+![Screenshot 2025-04-22 113847](https://github.com/user-attachments/assets/d4745cc3-819a-4d69-9008-00783125f24e)
 
+Past Trips Page
+![Screenshot 2025-04-22 113436](https://github.com/user-attachments/assets/44420582-91b5-462b-8ec1-4d6bd0446b7e)
 
 
 🙌 Credits
