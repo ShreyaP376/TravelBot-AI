@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot,faMoneyCheckDollar, faIndianRupeeSign } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot,faMoneyCheckDollar, faIndianRupeeSign,faStar } from "@fortawesome/free-solid-svg-icons";
 
 function FoodOptions({ trip}) {
   return (
@@ -28,6 +28,13 @@ function FoodOptions({ trip}) {
           />
           {restaurant?.restaddress}
         </p>
+        <p className="text-sm text-gray-600 mt-1">
+        <FontAwesomeIcon
+                                  icon={faStar}
+                                  className="text-gray-500 mr-2"
+                                />
+                                {restaurant?.rating} stars
+                              </p>
         <p className="mt-3 text-sm font-medium text-gray-800">Famous Dishes:</p>
         <ul className="list-disc list-inside text-sm text-gray-700 mt-1">
           {restaurant?.famousfood?.split(',').map((food, idx) => (

@@ -30,6 +30,9 @@ function CreateTrip() {
   const [openDialog, setOpenDialog] = useState(false);
   const [formData, setFormData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [noOfDays, setNoOfDays] = useState("");
   const navigate = useNavigate();
 
   //function to update form data
@@ -70,10 +73,12 @@ function CreateTrip() {
       .replace("{departLocation}", formData?.departLocation)
       .replace("{location}", formData?.location)
       .replace("{totalDays}", formData?.noOfDays)
+      .replace("{startDate}", formData?.startDate)
+      .replace("{endDate}", formData?.endDate)
       .replace("{traveler}", formData?.traveler)
       .replace("{budget}", formData?.budget)
       .replace("{mode}", formData?.mode)
-      .replace("{Days", formData?.noOfDays);
+      .replace("{Days}", formData?.noOfDays);
 
     console.log(FINAL_PROMPT);
 
@@ -132,6 +137,28 @@ function CreateTrip() {
       });
   };
 
+  const handleDateChange = (field, value) => {
+    if (field === "start") {
+      setStartDate(value);
+      handleInputChange("startDate", value);
+    } 
+    if (field === "end") {
+      console.log("eee",value)
+      setEndDate(value);
+      handleInputChange("endDate", value);
+    }
+    const start = field === "start" ? new Date(value) : new Date(startDate);
+    const end = field === "end" ? new Date(value) : new Date(endDate);
+
+    if (start && end && !isNaN(start) && !isNaN(end)) {
+      const diffTime = end.getTime() - start.getTime();
+      const days = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) + 1;
+      const totalDays = days > 0 ? days : 0;
+
+    setNoOfDays(totalDays);
+    handleInputChange("noOfDays", totalDays);
+    }
+  };
   return (
     <div className="sm:px-10 md:px-32 lg:px-56 xl:px-72 px-5 mt-10">
       <h2 className="font-bold text-3xl">Tell us your travel preferences</h2>
@@ -176,12 +203,31 @@ function CreateTrip() {
           <h2 className="text-xl my-3 font-medium">
             How many days are you planning your trip?
           </h2>
-          <input
-            type="number"
-            placeholder="Ex.4"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
-            onChange={(e) => handleInputChange("noOfDays", e.target.value)}
-          />
+
+          <div className="flex gap-4">
+            <div className="flex flex-col w-1/2">
+              <label className="block mb-1 text-gray-600">Start Date</label>
+              <input
+                type="date"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                placeholder="Start date"
+                onChange={(e) => handleDateChange("start", e.target.value)}
+                value={startDate}
+              />
+            </div>
+
+            <div className="flex flex-col w-1/2">
+              <label className="block mb-1 text-gray-600">End Date</label>
+              <input
+                type="date"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                placeholder="End date"
+                onChange={(e) =>handleDateChange("end", e.target.value)
+                }
+                value={endDate}
+              />
+            </div>
+          </div>
         </div>
         <div>
           <h2 className="text-xl my-3 font-medium">

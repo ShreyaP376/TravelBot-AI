@@ -75,12 +75,17 @@ export const SelectType=[
 ]
 
 export const AI_PROMPT = `
-Generate a {type} trip plan as name tripPlan starting from {departLocation} as origin to {location} as destination, for {totalDays} days, for {traveler}, with a {budget} budget. The mode of travel is {mode} . Add famous image of destination which can be accessed directly in to img tag as {imageURL}
-
+Generate a {type} trip plan as name tripPlan starting from {departLocation} as origin to {location} as destination, for {totalDays} days starting from date {startDate} to end date {endDate}, for {traveler}, with a {budget} budget. The mode of travel is {mode} . Add famous image of destination which can be accessed directly in to img tag as {imageURL}
+Provide the weather forecast for the selected travel location during the trip duration in the format (Only 1):
+'weatherForecast': 
+- "Min": XX (add this symbol °C )
+- "Max": XX  (add this symbol °C )
+- "summary" : weatherForecast summary of expected weather conditions in 3-4 words(e.g., humid, rainy, dry).
 1. Suggest 3-4 stay options under the key 'stayOptions'. Each stay option must include:
    - "hotelName": Name of the hotel
    - "hotelAddress": Hotel address
    - "costRange": Cost in INR
+   - "rating": Rating out of 5
    - "latitute": Latitude of the hotel
    - "longitude": Longitude of the hotel
    - "imageurl": give me publicly accessible image URL for that popular luxury hotel. Make sure the URL point directly to .jpg or .png
@@ -89,6 +94,7 @@ Generate a {type} trip plan as name tripPlan starting from {departLocation} as o
    - "restname": Name of the restaurant
    - "restaddress": Restaurant address
    - "famousfood": Famous dishes
+   - "rating": Rating out of 5
    - "latitute": Latitude of the restaurant
    - "longitude": Longitude of the restaurant
    - "imageurl": A valid image URL of the restaurant

@@ -1,20 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "../button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { useGoogleLogin } from "@react-oauth/google";
 import { googleLogout } from "@react-oauth/google";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger} from "@/components/ui/dialog";
 import { FcGoogle } from "react-icons/fc";
 import MyTrips from "../../../my-trips";
 
@@ -28,7 +17,7 @@ function Header() {
   });
 
   const GetUserProfile = (tokenInfo) => {
-    console.log("Hii");
+    console.log("Hello");
 
     if (!tokenInfo || !tokenInfo.access_token) {
       console.warn("Missing or invalid token info:", tokenInfo);

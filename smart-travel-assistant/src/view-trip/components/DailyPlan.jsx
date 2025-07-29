@@ -55,7 +55,7 @@ function DailyPlan({ trip }) {
                       </p>
                     )}
                     <a
-                      href={`https://www.google.com/maps?q=${place?.latitute},${place?.longitude}`}
+                      href={`https://www.google.com/maps?q=${place?.latitude},${place?.longitude}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-violet-500 underline mt-2 inline-block"
@@ -78,3 +78,4 @@ function DailyPlan({ trip }) {
 }
 
 export default DailyPlan;
+

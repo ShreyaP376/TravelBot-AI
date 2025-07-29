@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { db } from '../service/firebaseConfig';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight ,faCalendarAlt ,faDollarSign ,faUsers ,faTrain ,faTag ,faUser ,faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight ,faCalendarAlt ,faDollarSign ,faUsers ,faTrain ,faTag ,faUser ,faMapMarkerAlt, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { Button } from '../components/ui/button';
 
 function MyTrips() {
@@ -55,6 +55,10 @@ function MyTrips() {
             <div className="flex justify-center mt-4">
   <div className="flex flex-col space-y-2">
     {/* User Choices Section */}
+    <div className="flex items-center">
+      <FontAwesomeIcon icon={faCalendar} className="text-gray-500 mr-2" />
+      <span className="text-sm text-gray-600">Date: {trip?.userChoices?.startDate}</span>
+    </div>
     <div className="flex items-center">
       <FontAwesomeIcon icon={faTrain} className="text-gray-500 mr-2" />
       <span className="text-sm text-gray-600">Travel Mode: {trip?.userChoices?.mode}</span>

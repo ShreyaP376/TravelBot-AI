@@ -6,7 +6,7 @@ import {
   faLocationDot,
   faMoneyCheckDollar,
   faIndianRupeeSign,
-  faTag,
+  faTag,faStar
 } from "@fortawesome/free-solid-svg-icons";
 import fetchPhoto from "../../service/GlobalAPI";
 
@@ -61,15 +61,22 @@ function Hotels({ trip }) {
           <h3 className="mt-2 text-xl font-bold text-gray-800">
             {item?.hotelName}
           </h3>
-          <p className="text-sm text-gray-600 mt-1">
+          <p className="text-sm text-gray-500 mt-1">
             <FontAwesomeIcon
               icon={faLocationDot}
-              className="text-gray-600 mr-2"
+              className="text-gray-500 mr-2"
             />
             {item?.hotelAddress}
           </p>
+          <p className="text-sm text-gray-500 mt-1">
+                  <FontAwesomeIcon
+                                            icon={faStar}
+                                            className="text-gray-500 mr-2"
+                                          />
+                                          {item?.rating} stars
+                                        </p>
           <p className="text-sm text-gray-700 mt-1 flex items-center">
-            <FontAwesomeIcon icon={faTag} className="text-gray-600 mr-2" />
+            <FontAwesomeIcon icon={faTag} className="text-gray-500 mr-2" />
             {item?.costRange}
           </p>
           <a
